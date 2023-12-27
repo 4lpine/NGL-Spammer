@@ -1,6 +1,7 @@
 # Requirements
   - Python 3
   - Requests
+  - Colorama
   - Standard Library
 
 # Description
