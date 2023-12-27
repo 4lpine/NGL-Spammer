@@ -3,10 +3,13 @@ import threading
 import os
 import time
 import ctypes
+import colorama
+from colorama import Fore
 
+colorama.init()
 os.system("cls")
 
-questions = ["Enter the target username > ", "Enter the message to be spammed > ", "Enter the number of messages you want to send > "]
+questions = [f"Enter the target username {Fore.LIGHTBLACK_EX}>{Fore.WHITE} ", f"Enter the message to be spammed {Fore.LIGHTBLACK_EX}>{Fore.WHITE} ", f"Enter the number of messages you want to send {Fore.LIGHTBLACK_EX}>{Fore.WHITE} "]
 data = []
 
 for question in questions:
@@ -33,6 +36,6 @@ def spam():
 
 for i in range(int(data[-1])):
     ctypes.windll.kernel32.SetConsoleTitleW(f"{i}/{data[-1]}")
-    time.sleep(0.01)
+    time.sleep(0.001)
     threading.Thread(target=spam).start()
 
